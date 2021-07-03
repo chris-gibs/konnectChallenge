@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import React, {useReducer} from 'react'
+import Match from './components/Match'
+import Datetime from './components/Datetime'
+import Theme from './components/Theme'
+import Location from './components/Location'
+import Finalise from './components/Finalise'
+import Avatars from './components/Avatars'
+import {StateContext} from './utils/stateContext'
+import reducer from './utils/stateReducer'
+import initialState from './data/initialState'
+import BackButton from './components/BackButton'
+import Details from './components/Details'
+import {
+  BrowserRouter as Router,
+  Switch, Route
+} from "react-router-dom"
 
-function App() {
+const App = () => {
+  const [store, dispatch] = useReducer(reducer, initialState)
+  const {matchName} = store
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <StateContext.Provider value={{store, dispatch}}>
+        <Router>
+          <BackButton />
+          <Avatars />
+          <h2>{matchName}</h2>
+          <Details />
+          <Switch>
+            <Route exact path="/" component={Match}/>
+            <Route path="/Datetime" component={Datetime}/>
+            <Route path="/Theme" component={Theme}/>
+            <Route path="/Location" component={Location}/>
+            <Route path="/Finalise" component={Finalise}/>
+          </Switch>
+        </Router>
+      </StateContext.Provider>
+    </>
+  )
 }
 
-export default App;
+export default App
