@@ -1,5 +1,6 @@
-# Smitten
-A dating app focused around date creation/approval where matched users can create an idea for a date using day/time, theme and location options, then send it to their match that can accept/reject the date idea.
+# Konnect Digital Challenge
+## Smitten date functionality
+Smitten is a dating app focused around date creation/approval where matched users can create an idea for a date using day/time, theme and location options, then send it to their match that can accept/reject the date idea.
 
 ## Tech
 React, react-google-maps/api
