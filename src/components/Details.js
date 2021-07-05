@@ -12,12 +12,32 @@ const Details = () => {
 
   return (
     <>
-      {view !== '/' && <h1>
-        Let’s meet up on
-        {chosenDay && chosenTime ? ` ${chosenDay} ${chosenTime} ` : ' ___ '}
-        {!view.match(/^(\/Datetime)$/) && ` and go to ${chosenTheme ? ` ${chosenTheme} ` : ` ___ `}`}
-        {!view.match(/^(\/Datetime|\/Theme)$/) && ` at ${chosenLocation ? ` ${chosenLocation}` : ` ___`}`}
-      </h1>}
+      {
+        view !== '/' ?
+        <h1 >
+          <p className='details'>Let’s meet up on</p>
+          <span className={`details smitten`}>
+            {chosenDay && chosenTime ? ` ${chosenDay} ${chosenTime} ` : ' ___ '}
+          </span>
+          {!view.match(/^(\/Datetime)$/) && 
+          <>
+            <p className='details'>and go to</p>
+            <span className='details smitten'>
+              {chosenTheme ? ` ${chosenTheme} ` : ` ___ `}
+            </span>
+          </>
+          }
+          {!view.match(/^(\/Datetime|\/Theme)$/) && 
+          <>
+            <p className='details'>at</p>
+            <span className='details smitten'>
+              {chosenLocation ? ` ${chosenLocation}` : ` ___`}
+            </span>
+          </>
+          }
+        </h1>
+        : <h1 id='matchTitle'>It's A Match!</h1>
+      }
     </>
   )
 }

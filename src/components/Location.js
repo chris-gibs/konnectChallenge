@@ -11,7 +11,7 @@ const Location = () => {
 
   return (
     <>
-      <p>date location.</p>
+      <p id='pLocation'>Select a pre-filled date location or suggest another date location.</p>
       <Map />
       <Link to="/Finalise">
         <button type="button" onClick={handleClick}>Grill'd</button>

@@ -8,21 +8,21 @@ const Finalise = () => {
   return (
     <>
       <Link to="/Datetime" >
-        <button className="" type="button">
+        <button className="edit" type="button">
           <p>Date & Time</p>
           {chosenTime} {chosenDay}
           <img src="" alt="Edit"/>
         </button>
       </Link>
       <Link to="/Theme" >
-        <button className="" type="button">
+        <button className="edit" type="button">
           <p>Date Theme</p>
           {chosenTheme}
           <img src="" alt="Edit"/>
         </button>
       </Link>
       <Link to="/Location" >
-        <button className="" type="button">
+        <button className="edit" type="button">
           <p>Location</p>
           {chosenLocation}
           <img src="" alt="Edit"/>
@@ -30,7 +30,7 @@ const Finalise = () => {
       </Link>
 
       <Link to="/" >
-        <button className="" type="button">Slide To Send</button>
+        <button className="slideButton" type="button">Slide To Send</button>
       </Link>
     </>
   )

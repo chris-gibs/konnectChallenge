@@ -1,0 +1,188 @@
+//COLOURS
+$white: #FFFFFF;
+$bkBtn: #EDEDED;
+$border: #CECECE;
+$adjborder: #E2E2E2;
+$shadow: drop-shadow(0 3pt 6pt #00000029);
+$sRed: #E4423F;
+$sBorder: #D83330;
+$dRed: #A61C12;
+$charcoal: #1A1A1A;
+
+//FONTS
+$title: Lexend;
+$text: DM Sans;
+$match: Rozha One;
+
+//GENERAL STYLING
+body {
+  width: 414pt;
+  height: 896pt;
+  background-color: $white;
+  color: $charcoal;
+  font-size: 14pt;
+  text-align: center;
+}
+
+h1, h2, h3, #begin, .options {
+  font-family: $title;
+  font-weight: 600; 
+}
+
+p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, #matchName, #begin {
+  position: absolute;
+}
+
+//BUTTONS
+.options {
+  background-color: $white;
+  border: 1pt solid $border;
+  border-radius: 28pt;
+  width: 172pt;
+  height: 105pt;
+  filter: $shadow;
+  margin: 5pt;
+  font-size: 30pt;
+}
+
+.day {
+  font-size: 18pt;
+  display: block;
+}
+
+.edit {
+
+}
+
+#slideButton {
+
+}
+
+#back {
+  width: 40pt;
+  height: 40pt;
+  border-radius: 50%;
+  top: 46pt;
+  left: 15pt;
+}
+
+#begin {
+  background-color: $sRed;
+  border-radius: 23pt;
+  width: 130pt;
+  height: 45pt;
+  color: $white;
+  font-size: 18pt;
+  filter: $shadow;
+  top: 549pt;
+  left: 142pt;
+}
+
+//COMPONENTS
+
+//DETAILS
+.details {
+  display: inline;
+  top: 46pt;
+  left: 15pt;
+}
+
+//AVATARS
+#avatarContainerLrg, #avatarContainerSml {
+  position: relative;
+}
+
+#avatarContainerLrg {
+  width: 282pt;
+  height: 193pt;
+  top: 240pt;
+  left: 66pt;
+}
+#avatarContainerSml {
+  width: 57pt;
+  height: 39pt;
+  top: 47pt;
+  left: 107pt;
+}
+
+#userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml {
+  border-radius: 50%;
+  object-fit: none;
+  object-position: 50%;
+}
+
+#userImgLrg, #matchImgLrg {
+  width: 160pt;
+  height: 160pt;
+}
+
+#userImgSml, #matchImgSml {
+  width: 33pt;
+  height: 33pt;
+}
+
+#userImgLrg {
+  bottom: 0;
+  left: 0;
+}
+
+#userImgSml {
+  top: 0;
+  left: 0;
+}
+
+#matchImgLrg {
+  top: 0;
+  right: 0;
+  border: 12pt solid $white
+}
+
+#matchImgSml {
+  bottom: 0;
+  right: 0;
+  border: 4pt solid $white
+}
+
+//MATCH
+.smitten {
+  color: $sRed;
+}
+
+#matchTitle {
+  font-family: $match;
+  font-size: 40pt;
+  color: $dRed;
+  font-weight: 400;
+  top: 448pt;
+  left: 96pt;
+}
+
+#matchName {
+  font-size: 22pt;
+  top: 52pt;
+  left: 171pt;
+}
+
+#pMatch {
+  top: 505pt;
+  left: 79pt;
+}
+
+//DATETIME
+#pDatetime{
+  top: 233pt;
+  left: 30pt;
+}
+
+
+//THEME
+#pTheme{
+  top: 293pt;
+  left: 30pt;
+}
+
+
+//LOCATION
+#pLocation{
+  bottom: 16pt
+}

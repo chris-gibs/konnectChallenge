@@ -11,10 +11,10 @@ const Theme = () => {
 
   return (
     <>
-      <p>Select a pre-filled time slot or suggest your own.</p>
+      <p id='pTheme'>Select a pre-filled time slot or suggest your own.</p>
       <Link to="/Location">
         {themes.map((theme, index) => 
-          <button key={index} className="" type="button" onClick={handleClick}>{theme}</button>
+          <button key={index} className="options" type="button" onClick={handleClick}>{theme}</button>
         )}
       </Link>
     </>

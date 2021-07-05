@@ -1,4 +1,4 @@
-// import './App.css';
+import './styling/styles.scss';
 import React, {useReducer} from 'react'
 import Match from './components/Match'
 import Datetime from './components/Datetime'
@@ -18,26 +18,22 @@ import {
 
 const App = () => {
   const [store, dispatch] = useReducer(reducer, initialState)
-  const {matchName} = store
 
   return (
-    <>
-      <StateContext.Provider value={{store, dispatch}}>
-        <Router>
-          <BackButton />
-          <Avatars />
-          <h2>{matchName}</h2>
-          <Details />
-          <Switch>
-            <Route exact path="/" component={Match}/>
-            <Route path="/Datetime" component={Datetime}/>
-            <Route path="/Theme" component={Theme}/>
-            <Route path="/Location" component={Location}/>
-            <Route path="/Finalise" component={Finalise}/>
-          </Switch>
-        </Router>
-      </StateContext.Provider>
-    </>
+    <StateContext.Provider value={{store, dispatch}}>
+      <Router>
+        <BackButton />
+        <Avatars />
+        <Details />
+        <Switch>
+          <Route exact path="/" component={Match}/>
+          <Route path="/Datetime" component={Datetime}/>
+          <Route path="/Theme" component={Theme}/>
+          <Route path="/Location" component={Location}/>
+          <Route path="/Finalise" component={Finalise}/>
+        </Switch>
+      </Router>
+    </StateContext.Provider>
   )
 }
 

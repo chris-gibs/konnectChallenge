@@ -3,21 +3,24 @@ import {useGlobalState} from "../utils/stateContext"
 
 const Datetime = () => {
   const {store, dispatch} = useGlobalState()
-  const {days, times} = store
+  const {dateTimes} = store
 
   const handleClick = (event) => {
-    dispatch({type: 'setDatetime', payload: event.target.innerText.split(" ")})
+    dispatch({type: 'setDatetime', payload: event.currentTarget.value.split(" ")})
   }
+  
 
   return (
     <>
-      <p>Select a pre-filled time slot or suggest your own.</p>
+      <p id='pDatetime'>Select a pre-filled time slot or suggest your own.</p>
       <Link to="/Theme">
-        {days.map(day => times.map((time, index) => 
-          <button key={index} className="" type="button" onClick={handleClick}>{day} {time}</button>
-        ))}
-
-        <button className="" type="button">Select Enter</button>
+        {dateTimes.map((dateTime, index) => 
+          <button key={index} className="options" type="button" value={dateTime} onClick={handleClick}>
+            {dateTime.split(" ").map((data, index) =>
+              <span key={index} className={index === 0 ? 'day' : undefined}>{data}</span>
+            )}
+          </button>
+        )}
       </Link>
     </>
   )
