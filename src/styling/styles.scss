@@ -3,7 +3,7 @@ $white: #FFFFFF;
 $bkBtn: #EDEDED;
 $border: #CECECE;
 $adjborder: #E2E2E2;
-$shadow: drop-shadow(0 3pt 6pt #00000029);
+$shadow: drop-shadow(0 3px 6px #00000029);
 $sRed: #E4423F;
 $sBorder: #D83330;
 $dRed: #A61C12;
@@ -16,11 +16,11 @@ $match: Rozha One;
 
 //GENERAL STYLING
 body {
-  width: 414pt;
-  height: 896pt;
+  width: 414px;
+  height: 896px;
   background-color: $white;
   color: $charcoal;
-  font-size: 14pt;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -36,17 +36,17 @@ p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, 
 //BUTTONS
 .options {
   background-color: $white;
-  border: 1pt solid $border;
-  border-radius: 28pt;
-  width: 172pt;
-  height: 105pt;
+  border: 1px solid $border;
+  border-radius: 28px;
+  width: 172px;
+  height: 105px;
   filter: $shadow;
-  margin: 5pt;
-  font-size: 30pt;
+  margin: 5px;
+  font-size: 30px;
 }
 
 .day {
-  font-size: 18pt;
+  font-size: 18px;
   display: block;
 }
 
@@ -59,23 +59,26 @@ p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, 
 }
 
 #back {
-  width: 40pt;
-  height: 40pt;
+  background: url('../assets/images/backIcon.svg') no-repeat center;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  top: 46pt;
-  left: 15pt;
+  top: 46px;
+  left: 15px;
+  border: none;
 }
 
 #begin {
   background-color: $sRed;
-  border-radius: 23pt;
-  width: 130pt;
-  height: 45pt;
+  border-radius: 23px;
+  width: 130px;
+  height: 45px;
   color: $white;
-  font-size: 18pt;
+  font-size: 18px;
   filter: $shadow;
-  top: 549pt;
-  left: 142pt;
+  top: 549px;
+  left: 142px;
+  border: none;
 }
 
 //COMPONENTS
@@ -83,8 +86,8 @@ p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, 
 //DETAILS
 .details {
   display: inline;
-  top: 46pt;
-  left: 15pt;
+  top: 46px;
+  left: 15px;
 }
 
 //AVATARS
@@ -93,16 +96,16 @@ p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, 
 }
 
 #avatarContainerLrg {
-  width: 282pt;
-  height: 193pt;
-  top: 240pt;
-  left: 66pt;
+  width: 282px;
+  height: 193px;
+  top: 240px;
+  left: 66px;
 }
 #avatarContainerSml {
-  width: 57pt;
-  height: 39pt;
-  top: 47pt;
-  left: 107pt;
+  width: 57px;
+  height: 39px;
+  top: 47px;
+  left: 107px;
 }
 
 #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml {
@@ -112,13 +115,13 @@ p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, 
 }
 
 #userImgLrg, #matchImgLrg {
-  width: 160pt;
-  height: 160pt;
+  width: 160px;
+  height: 160px;
 }
 
 #userImgSml, #matchImgSml {
-  width: 33pt;
-  height: 33pt;
+  width: 33px;
+  height: 33px;
 }
 
 #userImgLrg {
@@ -134,13 +137,13 @@ p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, 
 #matchImgLrg {
   top: 0;
   right: 0;
-  border: 12pt solid $white
+  border: 12px solid $white
 }
 
 #matchImgSml {
   bottom: 0;
   right: 0;
-  border: 4pt solid $white
+  border: 4px solid $white
 }
 
 //MATCH
@@ -150,39 +153,39 @@ p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, 
 
 #matchTitle {
   font-family: $match;
-  font-size: 40pt;
+  font-size: 40px;
   color: $dRed;
   font-weight: 400;
-  top: 448pt;
-  left: 96pt;
+  top: 448px;
+  left: 96px;
 }
 
 #matchName {
-  font-size: 22pt;
-  top: 52pt;
-  left: 171pt;
+  font-size: 22px;
+  top: 52px;
+  left: 171px;
 }
 
 #pMatch {
-  top: 505pt;
-  left: 79pt;
+  top: 505px;
+  left: 79px;
 }
 
 //DATETIME
 #pDatetime{
-  top: 233pt;
-  left: 30pt;
+  top: 233px;
+  left: 30px;
 }
 
 
 //THEME
 #pTheme{
-  top: 293pt;
-  left: 30pt;
+  top: 293px;
+  left: 30px;
 }
 
 
 //LOCATION
 #pLocation{
-  bottom: 16pt
+  bottom: 16px
 }
