@@ -50,8 +50,12 @@ p {
   font-size: 14px;
 }
 
-h1, p, img, #matchTitle, #matchName, #begin, #back, #themeContainer, #datetimeContainer, #avatarContainerLrg, #avatarContainerSml, #detailsContainer, #editContainer, #slideButton {
+h1, p, img, #matchTitle, #matchName, #begin, #back, #avatarContainerLrg, #avatarContainerSml, #editContainer, #slideButton {
   position: absolute;
+}
+
+#datetimeContainer, #themeContainer, #detailsContainer {
+  position: relative;
 }
 
 //BUTTONS
@@ -126,24 +130,23 @@ h1, p, img, #matchTitle, #matchName, #begin, #back, #themeContainer, #datetimeCo
 }
 
 #detailsContainer {
-  width: 354px;
-  height: 38px;
+  width: 350px;
   top: 146px;
-  left: 30px;
+  left: 25px;
 }
 
 #datetimeContainer {
   width: 365px;
   height: 335px;
-  top: 237px;
-  left: 25px;
+  top: 195px;
+  left: 20px;
 }
 
 #themeContainer {
   width: 365px;
   height: 335px;
-  top: 297px;
-  left: 25px;
+  top: 185px;
+  left: 20px;
 }
 
 #editContainer {
@@ -247,19 +250,19 @@ h1, p, img, #matchTitle, #matchName, #begin, #back, #themeContainer, #datetimeCo
 }
 
 #datetimeText {
-  top: 194px;
-  left: 30px;
+  top: -40px;
+  left: 6px;
 }
 
 //THEME
 #themeText {
-  top: 258px;
-  left: 30px;
+  top: -40px;
+  left: 6px;
 }
 
 //LOCATION
 #locationText {
-  bottom: 16px
+  left: 6px;
 }
 
 #userMarker {

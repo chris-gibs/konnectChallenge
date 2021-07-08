@@ -8,15 +8,15 @@ const CurrentView = () => {
 const Avatars = () => {
   let view = CurrentView()
   const {store} = useGlobalState()
-  const {userImg, matchImg, matchName} = store
+  const {userDetails, matchDetails} = store
 
   return (
     <>
       <div id={view === '/' ? 'avatarContainerLrg' : 'avatarContainerSml'}>
-        <img id={view === '/' ? 'userImgLrg' : 'userImgSml'} src={userImg} alt="Current User"/>
-        <img id={view === '/' ? 'matchImgLrg' : 'matchImgSml'} src={matchImg} alt="Matched User"/>
+        <img id={view === '/' ? 'userImgLrg' : 'userImgSml'} src={userDetails.img} alt="Current User"/>
+        <img id={view === '/' ? 'matchImgLrg' : 'matchImgSml'} src={matchDetails.img} alt="Matched User"/>
       </div>
-      <h1 id={view === '/' ? 'matchName' : 'matchNameInline'}>{matchName}</h1>
+      <h1 id={view === '/' ? 'matchName' : 'matchNameInline'}>{matchDetails.name}</h1>
     </>
   )
 }
