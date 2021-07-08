@@ -23,4 +23,4 @@ All sequential until Finalise where you can go back to 2, 3 or 4. Consider a "ba
 ## Remaining functionality to implement
 1) Google Maps user markers, POI markers based on chosen theme
 2) Location page details slide box section and search box section
-3) Last bit of CSS to enable slow transitions between pages, allow for relative positioning when details section gets updated (Currently clipping the text beneath), location sections styling, and slide to send button.
+3) Last bit of CSS to enable slow transitions between pages, allow for relative positioning when details section gets updated (Currently clipping the text beneath), location sections styling, and final styling for edit/slide to send buttons.
