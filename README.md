@@ -1,22 +1,14 @@
 # Konnect Digital Challenge
 ## Smitten date functionality
-Smitten is a dating app focused around date creation/approval where matched users can create an idea for a date using day/time, theme and location options, then send it to their match that can accept/reject the date idea.
+The functionality I am working on is centered around the date creation feature of smitten where matched users can create an idea for a date using day/time, theme and location options, then send it to their match that can accept/reject the date idea.
 
 ## Tech
-React, react-google-maps/api
-
-## User Stories
-When I match with another user, I want to create a date idea to send them, choosing the day/time, theme and location, so I can take them out on a date.
-
-When I pick a selection I want to be taken straight to the next set of options quickly so that I can be the first to suggest a date idea.
-
-When I am looking for a location, I want the app to handle searching for all the potential spots near me and my potential date based on the theme chosen to save time, while also giving me an option to look myself.
+React, react-google-maps/api, HTML/SCSS/JS
 
 ## Functionality
-day/time, theme and location selection
-Google maps API for location selection that auto searches based on theme selected
+day/time, theme and location selection with dynamic update on details
+Google maps API for location selection that auto searches based on theme selected, displays a marker for each user
 Will need global context/state so the location selection component has access to selected theme
-Video content at least for user avatars, possibly for Theme button backgrounds
 
 ## Pages
 1) Match/Begin
@@ -27,3 +19,8 @@ Video content at least for user avatars, possibly for Theme button backgrounds
 
 ## Routes
 All sequential until Finalise where you can go back to 2, 3 or 4. Consider a "back to finalise" reroute when new selection is made. Can return to previous page using the back button at top left.
+
+## Remaining functionality to implement
+1) Google Maps user markers, POI markers based on chosen theme
+2) Location page details slide box section and search box section
+3) Last bit of CSS to enable slow transitions between pages, allow for relative positioning when details section gets updated (Currently clipping the text beneath), location sections styling, and slide to send button.

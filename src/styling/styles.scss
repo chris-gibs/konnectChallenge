@@ -262,4 +262,13 @@ h1, p, img, #matchTitle, #matchName, #begin, #back, #themeContainer, #datetimeCo
   bottom: 16px
 }
 
+#userMarker {
+  border-radius: 50%;
+  object-position: 50%;
+  object-fit: 'cover';
+  width: 33px;
+  height: 33px;
+  border: 4px solid $white;
+}
+
 //FINALISE

@@ -65,12 +65,12 @@ const Map = () => {
         zoom={16}
         options={options}
       >
+        <div id='userMarker'>
         <Marker
           icon={userMarker}
           position={userCoords}
-          options={styling}
-          
         />
+        </div>
         <Marker
           icon={matchImg}
           position={matchCoords}
