@@ -272,3 +272,24 @@ h1, p, img, #matchTitle, #matchName, #begin, #back, #themeContainer, #datetimeCo
 }
 
 //FINALISE
+
+.editHeader, .editText, .editIcon {
+  margin: -10px 10px;
+}
+
+.editHeader {
+  font-size: 16px;
+  text-align: left;
+}
+
+.editText {
+  text-align: right;
+  position: relative;
+  left: -35px;
+}
+
+.editIcon {
+  width: 20px;
+  height: 20px;
+  left: 305px;
+}
