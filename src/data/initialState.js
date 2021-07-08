@@ -12,7 +12,8 @@ const initialState = {
   chosenDay: null,
   chosenTime: null,
   chosenTheme: null,
-  chosenLocation: null
+  chosenLocation: null,
+  map: null
 }
 
 export default initialState

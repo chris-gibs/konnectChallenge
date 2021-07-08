@@ -17,45 +17,65 @@ $match: Rozha One;
 //GENERAL STYLING
 body {
   width: 414px;
-  height: 896px;
+  height: 857px;
   background-color: $white;
   color: $charcoal;
-  font-size: 14px;
-  text-align: center;
 }
 
-h1, h2, h3, #begin, .options {
+h1, p, img {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+h1, .options, .details, .day, .edit, #begin, #matchName, #slideButton{
   font-family: $title;
-  font-weight: 600; 
 }
 
-p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, #matchName, #begin {
+h1, .options, .details, .edit, #begin, #matchName {
+  font-weight: 600; //semibold
+}
+
+.day, #slideButton {
+  font-weight: 500; //medium
+}
+
+.details, .options {
+  font-size: 30px;
+}
+
+p {
+  font-family: $text;
+  font-weight: 400; //normal (Regular)
+  font-size: 14px;
+}
+
+h1, p, img, #matchTitle, #matchName, #begin, #back, #themeContainer, #datetimeContainer, #avatarContainerLrg, #avatarContainerSml, #detailsContainer, #editContainer, #slideButton {
   position: absolute;
 }
 
 //BUTTONS
-.options {
+.options, .edit, #begin {
+  filter: $shadow;
+}
+
+.options, .edit, #slideButton {
   background-color: $white;
   border: 1px solid $border;
+}
+
+.options {
   border-radius: 28px;
   width: 172px;
   height: 105px;
-  filter: $shadow;
   margin: 5px;
-  font-size: 30px;
-}
-
-.day {
-  font-size: 18px;
-  display: block;
 }
 
 .edit {
-
-}
-
-#slideButton {
-
+  border-radius: 20px;
+  width: 354px;
+  height: 40px;
+  margin-bottom: 12px;
 }
 
 #back {
@@ -63,7 +83,7 @@ p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, 
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  top: 46px;
+  top: 7px;
   left: 15px;
   border: none;
 }
@@ -75,51 +95,86 @@ p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, 
   height: 45px;
   color: $white;
   font-size: 18px;
-  filter: $shadow;
-  top: 549px;
+  top: 510px;
   left: 142px;
   border: none;
+}
+
+#slideButton {
+  border-radius: 20px;
+  width: 354px;
+  height: 61px;
+  top: 752px;
+  left: 30px;
+}
+
+//CONTAINERS
+
+//Consider container that makes all other containers within, such as details/text relatively positioned to each other to allow for details to expand and other elements to shift down as needed
+#avatarContainerLrg {
+  width: 282px;
+  height: 193px;
+  top: 201px;
+  left: 66px;
+}
+
+#avatarContainerSml {
+  width: 60px;
+  height: 45px;
+  top: 8px;
+  left: 107px;
+}
+
+#detailsContainer {
+  width: 354px;
+  height: 38px;
+  top: 146px;
+  left: 30px;
+}
+
+#datetimeContainer {
+  width: 365px;
+  height: 335px;
+  top: 237px;
+  left: 25px;
+}
+
+#themeContainer {
+  width: 365px;
+  height: 335px;
+  top: 297px;
+  left: 25px;
+}
+
+#editContainer {
+  width: 354px;
+  height: 144px;
+  top: 389px;
+  left: 30px;
 }
 
 //COMPONENTS
 
 //DETAILS
 .details {
+  position: relative;
   display: inline;
-  top: 46px;
-  left: 15px;
 }
 
 //AVATARS
-#avatarContainerLrg, #avatarContainerSml {
-  position: relative;
-}
-
-#avatarContainerLrg {
-  width: 282px;
-  height: 193px;
-  top: 240px;
-  left: 66px;
-}
-#avatarContainerSml {
-  width: 57px;
-  height: 39px;
-  top: 47px;
-  left: 107px;
-}
-
 #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml {
   border-radius: 50%;
-  object-fit: none;
   object-position: 50%;
 }
 
 #userImgLrg, #matchImgLrg {
+  object-fit: none;
   width: 160px;
   height: 160px;
 }
 
 #userImgSml, #matchImgSml {
+  object-fit: cover;
   width: 33px;
   height: 33px;
 }
@@ -151,41 +206,60 @@ p, #userImgLrg, #userImgSml, #matchImgLrg, #matchImgSml, .details, #matchTitle, 
   color: $sRed;
 }
 
-#matchTitle {
-  font-family: $match;
-  font-size: 40px;
-  color: $dRed;
-  font-weight: 400;
-  top: 448px;
-  left: 96px;
+#matchName, #matchNameInline {
+  top: 13px;
+  font-size: 22px;
 }
 
 #matchName {
-  font-size: 22px;
-  top: 52px;
-  left: 171px;
+  left: 130px;
 }
 
-#pMatch {
-  top: 505px;
+#matchNameInline {
+  left: 171px;
+  margin: 0 7px;
+}
+
+#matchTitle {
+  top: 409px;
+  left: 96px;
+  width: 223px;
+  height: 57px;
+  font-family: $match;
+  font-size: 40px;
+  color: $dRed;
+  font-weight: 400; //normal (Regular)
+}
+
+#matchText {
+  top: 466px;
   left: 79px;
+  width: 190px;
+  height: 34px;
+  padding: 0px 33px;
+  text-align: center;
 }
 
 //DATETIME
-#pDatetime{
-  top: 233px;
-  left: 30px;
+.day {
+  font-size: 18px;
+  display: block;
 }
 
+#datetimeText {
+  top: 194px;
+  left: 30px;
+}
 
 //THEME
-#pTheme{
-  top: 293px;
+#themeText {
+  top: 258px;
   left: 30px;
 }
 
-
 //LOCATION
-#pLocation{
+#locationText {
   bottom: 16px
 }
+
+//FINALISE

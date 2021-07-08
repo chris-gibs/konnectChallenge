@@ -7,30 +7,31 @@ const Finalise = () => {
 
   return (
     <>
-      <Link to="/Datetime" >
-        <button className="edit" type="button">
-          <p>Date & Time</p>
-          {chosenTime} {chosenDay}
-          <img src="" alt="Edit"/>
-        </button>
-      </Link>
-      <Link to="/Theme" >
-        <button className="edit" type="button">
-          <p>Date Theme</p>
-          {chosenTheme}
-          <img src="" alt="Edit"/>
-        </button>
-      </Link>
-      <Link to="/Location" >
-        <button className="edit" type="button">
-          <p>Location</p>
-          {chosenLocation}
-          <img src="" alt="Edit"/>
-        </button>
-      </Link>
-
+      <div id="editContainer">
+        <Link to="/Datetime" >
+          <button className="edit" id="daytimeEdit" type="button">
+            <h1 className='editHeader'>Date & Time</h1>
+            <p>{chosenTime} {chosenDay}</p>
+            <img src="" alt="Edit"/>
+          </button>
+        </Link>
+        <Link to="/Theme" >
+          <button className="edit" id="themeEdit" type="button">
+            <h1 className='editHeader'>Date Theme</h1>
+            <p>{chosenTheme}</p>
+            <img src="" alt="Edit"/>
+          </button>
+        </Link>
+        <Link to="/Location" >
+          <button className="edit" id="locationEdit" type="button">
+            <h1 className='editHeader'>Location</h1>
+            <p>{chosenLocation}</p>
+            <img src="" alt="Edit"/>
+          </button>
+        </Link>
+      </div>
       <Link to="/" >
-        <button className="slideButton" type="button">Slide To Send</button>
+        <button id="slideButton" type="button">Slide To Send</button>
       </Link>
     </>
   )

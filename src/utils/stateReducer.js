@@ -25,6 +25,12 @@ const reducer = (state, action) => {
         chosenLocation: action.payload
       }
     }
+    case 'setMap': {
+      return {
+        ...state,
+        map: action.payload
+      }
+    }
     default: return state
   }
 }

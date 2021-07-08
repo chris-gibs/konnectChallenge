@@ -16,9 +16,9 @@ const Avatars = () => {
         <img id={view === '/' ? 'userImgLrg' : 'userImgSml'} src={userImg} alt="Current User"/>
         <img id={view === '/' ? 'matchImgLrg' : 'matchImgSml'} src={matchImg} alt="Matched User"/>
       </div>
-      <h2 id={view === '/' ? undefined : 'matchName'}>{matchName}</h2>
+      <h1 id={view === '/' ? 'matchName' : 'matchNameInline'}>{matchName}</h1>
     </>
   )
 }
-// 'matchNameMatched'
+
 export default Avatars
