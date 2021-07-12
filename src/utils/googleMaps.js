@@ -19,18 +19,23 @@ const libraries = ["places"]
 
 const Map = () => {
   const {store, dispatch} = useGlobalState()
-  const {userDetails, matchDetails, map, places, themes, chosenTheme} = store
-
+  const {userDetails, matchDetails, places, themes, chosenTheme, chosenLocation} = store
+  const users = [userDetails, matchDetails]
   
   const mapContainerStyle = {
     width: '414px',
     height: '857px',
-    zIndex: -5
+    top: 0,
+    left: 0,
+    position: 'absolute',
+    zIndex: -3
   }
+
   const center = {
     lat: (userDetails.coords.lat + matchDetails.coords.lat)/2,
     lng: (userDetails.coords.lng + matchDetails.coords.lng)/2
   }
+
   const options = {
     styles: mapStyling,
     disableDefaultUI: true,
@@ -52,32 +57,46 @@ const Map = () => {
       service.nearbySearch({
           location: center,
           radius: '1000',
-          type: [themes[chosenTheme]],
+          type: chosenTheme && [themes[chosenTheme].type],
           openNow: true
       }, (places) => dispatch({type: 'setPlaces', payload: places}))
     }, []
   )
+
+  const renderUsers = () => {
+    return users.map((user, index) =>
+      <Marker
+        key={index}
+        position={user.coords}
+        icon={{
+          url: user.img,
+          scaledSize: new window.google.maps.Size(35,35),
+          origin: new window.google.maps.Point(0,0),
+          anchor: new window.google.maps.Point(25,25)
+        }}
+        zIndex={-1}
+      />
+    )
+  }
 
   const renderPlaces = () => {
     return places.map((place) =>
       <Marker
         key={place.place_id}
         position={place.geometry.location}
-        icon={{url: place.icon}}
-        onClick={() => {
-          console.log("Click")
-          // dispatch({type: 'setLocation', payload: this.value})
+        icon={{
+          url: chosenTheme && themes[chosenTheme].icon,
+          scaledSize: new window.google.maps.Size(35,35),
+          origin: new window.google.maps.Point(0,0),
+          anchor: new window.google.maps.Point(25,25)
         }}
+        zIndex={-2}
+        label={place.name}
+        labelOrigin={new window.google.maps.Point(-50,-0)}
+        onClick={(place) => dispatch({type: 'setLocation', payload: place.name})}
       />
     )
   }
-  
-  // {
-  //   url: '../assets/images/foodIcon.svg',
-  //   scaledSize: new window.google.maps.Size(50,50),
-  //   origin: new window.google.maps.Point(0,0),
-  //   anchor: new window.google.maps.Point(25,25)
-  // }
 
   if(loadError) return "Error loading map"
   if(!isLoaded) return "Loading map"
@@ -87,12 +106,14 @@ const Map = () => {
     {/* <Search /> */}
     <GoogleMap
       mapContainerStyle={mapContainerStyle}
-      zoom={15}
+      zoom={16}
       center={center}
       options={options}
       onLoad={onLoad}
+      onClick={console.log('Map wutf')}
     >
       {places && console.log(places[0])}
+      {renderUsers()}
       {places && renderPlaces()}
     </GoogleMap>
     </>

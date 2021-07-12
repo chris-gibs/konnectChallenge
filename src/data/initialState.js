@@ -1,5 +1,6 @@
 import userImg from '../assets/images/currentUser.png'
 import matchImg from '../assets/images/matchUser.png'
+import food from '../assets/images/foodIcon.svg'
 
 const initialState = {
   userDetails: {
@@ -8,11 +9,11 @@ const initialState = {
   },
   matchDetails: {
     img: matchImg,
-    coords: {lat: -27.455325874374758, lng: 153.04392266275087},
+    coords: {lat: -27.455073, lng: 153.036391},
     name: 'Charlotte King'
   },
   dateTimes: ["Saturday 6:30", "Saturday 7:30", "Sunday 6:30", "Sunday 7:30", "Sunday 8:30", "Select Enter"],
-  themes: {"Dinner": "restaurant", "Drinks": "bar", "Dessert": "bakery", "Trivia": "restaurant", "Movies": "movie_theater", "Custom": "bowling_alley"},
+  themes: {"Dinner": {type: "restaurant", icon: food}, "Drinks": {type: "bar", icon: food}, "Dessert": {type: "bakery", icon: food}, "Trivia": {type: "restaurant", icon: food}, "Movies": {type: "movie_theater", icon: food}, "Custom": {type: "bowling_alley", icon: food}},
   chosenDay: null,
   chosenTime: null,
   chosenTheme: null,
