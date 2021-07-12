@@ -11,6 +11,7 @@ const Location = () => {
 
   return (
     <>
+      {/* <div id='map'></div> */}
       <p id="locationText">Select a pre-filled date location or suggest another date location.</p>
       <Map />
       <Link to="/Finalise">

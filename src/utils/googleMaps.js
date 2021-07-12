@@ -1,25 +1,31 @@
-import React, {memo} from 'react';
+import React, {memo, useRef, useCallback} from 'react'
 import {
   GoogleMap, useLoadScript, Marker
-} from '@react-google-maps/api';
+} from '@react-google-maps/api'
+// import usePlacesAutocomplete, {
+//   getGeocode,
+//   getLatLng
+// } from 'use-places-autocomplete'
+// import {
+//   Combobox, ComboboxInput, ComboboxPopover,
+//   ComboboxList, ComboboxOption
+// } from '@reach/combobox'
 import {useGlobalState} from "../utils/stateContext"
 import mapStyling from './mapStyling'
+// import Search from './Search'
+
+
+const libraries = ["places"]
 
 const Map = () => {
-  const {store} = useGlobalState()
-  const {userDetails, matchDetails} = store
-  
-  var markers = [
-    userDetails,
-    matchDetails
-  ]
+  const {store, dispatch} = useGlobalState()
+  const {userDetails, matchDetails, map, places, themes, chosenTheme} = store
 
-  //MAP SETTINGS
-  const libraries = ["places"]
+  
   const mapContainerStyle = {
     width: '414px',
     height: '857px',
-    zIndex: -1
+    zIndex: -5
   }
   const center = {
     lat: (userDetails.coords.lat + matchDetails.coords.lat)/2,
@@ -36,43 +42,63 @@ const Map = () => {
     libraries
   })
 
+  const mapRef = useRef()
+  const onLoad = useCallback(
+    (mapInstance) => {
+      mapRef.current = mapInstance
+      dispatch({type: 'setMap', payload: mapInstance})
+
+      const service = new window.google.maps.places.PlacesService(mapInstance)
+      service.nearbySearch({
+          location: center,
+          radius: '1000',
+          type: [themes[chosenTheme]],
+          openNow: true
+      }, (places) => dispatch({type: 'setPlaces', payload: places}))
+    }, []
+  )
+
+  const renderPlaces = () => {
+    return places.map((place) =>
+      <Marker
+        key={place.place_id}
+        position={place.geometry.location}
+        icon={{url: place.icon}}
+        onClick={() => {
+          console.log("Click")
+          // dispatch({type: 'setLocation', payload: this.value})
+        }}
+      />
+    )
+  }
+  
+  // {
+  //   url: '../assets/images/foodIcon.svg',
+  //   scaledSize: new window.google.maps.Size(50,50),
+  //   origin: new window.google.maps.Point(0,0),
+  //   anchor: new window.google.maps.Point(25,25)
+  // }
+
   if(loadError) return "Error loading map"
   if(!isLoaded) return "Loading map"
 
   return (
+    <>
+    {/* <Search /> */}
     <GoogleMap
       mapContainerStyle={mapContainerStyle}
-      zoom={16}
+      zoom={15}
       center={center}
       options={options}
+      onLoad={onLoad}
     >
-      {markers.map((marker, index) =>
-        <Marker
-          key={index}
-          position={marker.coords}
-          icon={marker.img}
-        />
-      )}
+      {places && console.log(places[0])}
+      {places && renderPlaces()}
     </GoogleMap>
+    </>
   )
 
-  
-
-
-  // const userMarker = {
-  //   url: userImg,
-  //   borderRadius: '50%',
-    // objectPosition: '50%',
-    // objectFit: 'cover',
-    // width: '33px',
-    // height: '33px',
-    // border: '4px solid $white'
-  // }
-  // const matchMarker = new google.maps.Marker({
-  //   position: matchCoords,
-  //   map: map
-  // })
-
+  //Try SVG styling
   // const styling = {
   //   borderRadius: '50%',
   //   objectPosition: '50%',
@@ -81,8 +107,6 @@ const Map = () => {
   //   height: '33px',
   //   border: '4px solid $white'
   // }
-
-  // if you cant create a rounded image with border then use a second marker that is a circle at the same coords
 }
 
 export default memo(Map)

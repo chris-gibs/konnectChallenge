@@ -31,6 +31,12 @@ const reducer = (state, action) => {
         map: action.payload
       }
     }
+    case 'setPlaces': {
+      return {
+        ...state,
+        places: action.payload
+      }
+    }
     default: return state
   }
 }

@@ -12,12 +12,13 @@ const initialState = {
     name: 'Charlotte King'
   },
   dateTimes: ["Saturday 6:30", "Saturday 7:30", "Sunday 6:30", "Sunday 7:30", "Sunday 8:30", "Select Enter"],
-  themes: ["Dinner", "Drinks", "Dessert", "Trivia", "Movies", "Custom"],
+  themes: {"Dinner": "restaurant", "Drinks": "bar", "Dessert": "bakery", "Trivia": "restaurant", "Movies": "movie_theater", "Custom": "bowling_alley"},
   chosenDay: null,
   chosenTime: null,
   chosenTheme: null,
   chosenLocation: null,
-  map: null
+  map: null,
+  places: null
 }
 
 export default initialState

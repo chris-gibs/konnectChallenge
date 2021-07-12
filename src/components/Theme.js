@@ -14,7 +14,7 @@ const Theme = () => {
       <div id="themeContainer">
         <p id="themeText">Select a pre-filled time slot or suggest your own.</p>
         <Link to="/Location">
-          {themes.map((theme, index) => 
+          {Object.keys(themes).map((theme, index) => 
             <button key={index} className="options" type="button" onClick={handleClick}>{theme}</button>
           )}
         </Link>
