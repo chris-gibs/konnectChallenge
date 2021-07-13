@@ -1,5 +1,5 @@
 import React, {memo, useRef, useCallback} from 'react'
-import {Link} from "react-router-dom"
+import {useHistory} from "react-router-dom"
 import {
   GoogleMap, useLoadScript, Marker
 } from '@react-google-maps/api'
@@ -87,6 +87,7 @@ const Map = () => {
   //   height: '33px',
   //   border: '4px solid $white'
   // }
+  const history = useHistory()
 
   const renderPlaces = () => {
     return places.map((place) =>
@@ -102,7 +103,10 @@ const Map = () => {
         }}
         label={place.name}
         labelOrigin={new window.google.maps.Point(0,0)}
-        onClick={() => dispatch({type: 'setLocation', payload: place.name})}
+        onClick={() => {
+          dispatch({type: 'setLocation', payload: place.name})
+          history.push("/Finalise")
+        }}
         zIndex={-1}
       />
     )
