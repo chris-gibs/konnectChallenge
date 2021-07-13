@@ -1,4 +1,5 @@
 import React, {memo, useRef, useCallback} from 'react'
+import {Link} from "react-router-dom"
 import {
   GoogleMap, useLoadScript, Marker
 } from '@react-google-maps/api'
@@ -24,11 +25,10 @@ const Map = () => {
   
   const mapContainerStyle = {
     width: '414px',
-    height: '857px',
-    top: 0,
+    height: '802px',
+    top: '55px',
     left: 0,
     position: 'absolute',
-    zIndex: -3
   }
 
   const center = {
@@ -78,6 +78,15 @@ const Map = () => {
       />
     )
   }
+  //Try SVG styling
+  // const styling = {
+  //   borderRadius: '50%',
+  //   objectPosition: '50%',
+  //   objectFit: 'cover',
+  //   width: '33px',
+  //   height: '33px',
+  //   border: '4px solid $white'
+  // }
 
   const renderPlaces = () => {
     return places.map((place) =>
@@ -88,12 +97,13 @@ const Map = () => {
           url: chosenTheme && themes[chosenTheme].icon,
           scaledSize: new window.google.maps.Size(35,35),
           origin: new window.google.maps.Point(0,0),
-          anchor: new window.google.maps.Point(25,25)
+          anchor: new window.google.maps.Point(15,15),
+          labelOrigin: new window.google.maps.Point(20,40)
         }}
-        zIndex={-2}
         label={place.name}
-        labelOrigin={new window.google.maps.Point(-50,-0)}
-        onClick={(place) => dispatch({type: 'setLocation', payload: place.name})}
+        labelOrigin={new window.google.maps.Point(0,0)}
+        onClick={() => dispatch({type: 'setLocation', payload: place.name})}
+        zIndex={-1}
       />
     )
   }
@@ -103,31 +113,20 @@ const Map = () => {
 
   return (
     <>
-    {/* <Search /> */}
-    <GoogleMap
-      mapContainerStyle={mapContainerStyle}
-      zoom={16}
-      center={center}
-      options={options}
-      onLoad={onLoad}
-      onClick={console.log('Map wutf')}
-    >
-      {places && console.log(places[0])}
-      {renderUsers()}
-      {places && renderPlaces()}
-    </GoogleMap>
+      {/* <Search /> */}
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        zoom={16}
+        center={center}
+        options={options}
+        onLoad={onLoad}
+        zIndex={-2}
+      >
+        {renderUsers()}
+        {places && renderPlaces()}
+      </GoogleMap>
     </>
   )
-
-  //Try SVG styling
-  // const styling = {
-  //   borderRadius: '50%',
-  //   objectPosition: '50%',
-  //   objectFit: 'cover',
-  //   width: '33px',
-  //   height: '33px',
-  //   border: '4px solid $white'
-  // }
 }
 
 export default memo(Map)

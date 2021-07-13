@@ -162,6 +162,7 @@ h1, p, img, #matchTitle, #matchName, #begin, #back, #avatarContainerLrg, #avatar
 .details {
   position: relative;
   display: inline;
+  z-index: 1;
 }
 
 //AVATARS
@@ -263,6 +264,7 @@ h1, p, img, #matchTitle, #matchName, #begin, #back, #avatarContainerLrg, #avatar
 //LOCATION
 #locationText {
   left: 6px;
+  z-index: 1;
 }
 
 #userMarker {
