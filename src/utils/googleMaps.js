@@ -20,7 +20,7 @@ const libraries = ["places"]
 
 const Map = () => {
   const {store, dispatch} = useGlobalState()
-  const {userDetails, matchDetails, places, themes, chosenTheme, chosenLocation} = store
+  const {userDetails, matchDetails, places, themes, chosenTheme} = store
   const users = [userDetails, matchDetails]
   
   const mapContainerStyle = {
@@ -99,7 +99,7 @@ const Map = () => {
           scaledSize: new window.google.maps.Size(35,35),
           origin: new window.google.maps.Point(0,0),
           anchor: new window.google.maps.Point(15,15),
-          labelOrigin: new window.google.maps.Point(20,40)
+          labelOrigin: new window.google.maps.Point(20,45)
         }}
         label={place.name}
         labelOrigin={new window.google.maps.Point(0,0)}

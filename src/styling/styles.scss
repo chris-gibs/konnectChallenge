@@ -113,8 +113,6 @@ h1, p, img, #matchTitle, #matchName, #begin, #back, #avatarContainerLrg, #avatar
 }
 
 //CONTAINERS
-
-//Consider container that makes all other containers within, such as details/text relatively positioned to each other to allow for details to expand and other elements to shift down as needed
 #avatarContainerLrg {
   width: 282px;
   height: 193px;
@@ -133,6 +131,17 @@ h1, p, img, #matchTitle, #matchName, #begin, #back, #avatarContainerLrg, #avatar
   width: 350px;
   top: 146px;
   left: 25px;
+}
+
+#detailsSection { //needs to be fixed
+  background-color: $white;
+  width: 414px;
+  height: 292px;
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  z-index: 1;
 }
 
 #datetimeContainer {
@@ -263,6 +272,7 @@ h1, p, img, #matchTitle, #matchName, #begin, #back, #avatarContainerLrg, #avatar
 
 //LOCATION
 #locationText {
+  top: 270px;
   left: 6px;
   z-index: 1;
 }
