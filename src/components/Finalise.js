@@ -5,31 +5,25 @@ import edit from "../assets/images/editIcon.png"
 const Finalise = () => {
   const {store} = useGlobalState()
   const {chosenDay, chosenTime, chosenTheme, chosenLocation} = store
+  
+  const editButtons = [
+    {page: "/Datetime", header: "Date & Time", text: `${chosenTime} ${chosenDay}`},
+    {page: "/Theme", header: "Date Theme", text: chosenTheme},
+    {page: "/Location", header: "Location", text: chosenLocation}
+  ]
 
   return (
     <>
       <div id="editContainer">
-        <Link to="/Datetime" >
-          <button className="edit" type="button">
-            <h1 className='editHeader'>Date & Time</h1>
-            <p className='editText'>{chosenTime} {chosenDay}</p>
-            <img src={edit} alt="Edit" className='editIcon'/>
-          </button>
-        </Link>
-        <Link to="/Theme" >
-          <button className="edit" type="button">
-            <h1 className='editHeader'>Date Theme</h1>
-            <p className='editText'>{chosenTheme}</p>
-            <img src={edit} alt="Edit" className='editIcon'/>
-          </button>
-        </Link>
-        <Link to="/Location" >
-          <button className="edit" type="button">
-            <h1 className='editHeader'>Location</h1>
-            <p className='editText'>{chosenLocation}</p>
-            <img src={edit} alt="Edit" className='editIcon'/>
-          </button>
-        </Link>
+        {editButtons.map(({page, header, text}, index) => 
+          <Link to={page}>
+            <button key={index} className="edit" type="button">
+              <h1 className='editHeader'>{header}</h1>
+              <p className='editText'>{text}</p>
+              <img src={edit} alt="Edit" className='editIcon'/>
+            </button>
+          </Link>
+        )}
       </div>
       <Link to="/" >
         <button id="slideButton" type="button">Slide To Send</button>

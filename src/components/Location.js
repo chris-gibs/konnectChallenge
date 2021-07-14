@@ -4,7 +4,7 @@ const Location = () => {
   return (
     <>
       <div id="detailsSection">
-        <p id="locationText">Select a pre-filled date location or suggest another date location.</p>
+        
       </div>
       <Map />
       {/* <div id="searchSection">

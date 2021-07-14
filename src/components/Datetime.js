@@ -13,7 +13,7 @@ const Datetime = () => {
   return (
     <>
       <div id="datetimeContainer">
-        <p id="datetimeText">Select a pre-filled time slot or suggest your own.</p>
+        
         <Link to="/Theme">
           {dateTimes.map((dateTime, index) => 
             <button key={index} className="options" type="button" value={dateTime} onClick={handleClick}>

@@ -8,9 +8,7 @@ const Match = () => {
 
   return (
     <>
-      <p id='matchText'>
-        Let's start creating a date with {matchDetails.name.replace(/ .*/,'')} and you.
-      </p>
+      
       <Link to="/Datetime">
         <button id='begin' type="button">Begin!</button>
       </Link>
